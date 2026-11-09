@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados Finales - Quiz Himno Honduras</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Resultados Finales</h1>
+            <a href="{{ url_for('quiz') }}" class="btn btn-secondary">Volver al inicio</a>
+        </header>
+
+        <div class="card score-card">
+            <div class="score-display">
+                <span class="score-number">{{ puntuacion }}</span>
+                <span class="score-text">de {{ total }} correctas</span>
+            </div>
+            <div class="score-percentage">{{ porcentaje }}%</div>
+            <div class="score-message">
+                {% if porcentaje >= 80 %}
+                    <span class="message-excellent">Excelente! Conoces muy bien el himno nacional de Honduras.</span>
+                {% elif porcentaje >= 60 %}
+                    <span class="message-good">Bien! Tienes buenos conocimientos, pero puedes mejorar.</span>
+                {% else %}
+                    <span class="message-needs-work">Necesitas estudiar mas sobre el himno nacional de Honduras.</span>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="card results-card">
+            <h2>Detalle de respuestas</h2>
+            {% for r in resultados %}
+            <div class="result-item {% if r.es_correcta %}correct{% else %}incorrect{% endif %}">
+                <div class="result-question">
+                    <span class="q-number">{{ r.id }}.</span> {{ r.pregunta }}
+                </div>
+                <div class="result-answer">
+                    {% if r.es_correcta %}
+                    <span class="badge correct-badge">Correcta</span>
+                    {% else %}
+                    <span class="badge incorrect-badge">Incorrecta</span>
+                    {% endif %}
+                    {% if r.respuesta_usuario %}
+                    <span class="tu-respuesta">
+                        Tu respuesta: {{ r.respuesta_usuario }}
+                    </span>
+                    <br>
+                    {% endif %}
+                    <span class="respuesta-correcta">
+                        Correcta: {{ r.respuesta_correcta }}
+                    </span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="form-actions">
+            <a href="{{ url_for('quiz') }}" class="btn btn-primary">Intentar de nuevo</a>
+        </div>
+
+        {% if musica %}
+        <div class="card spotify-card">
+            <h3>Musica de fondo</h3>
+            <div class="musica-player">
+                <div class="musica-portada">♪</div>
+                <div class="musica-info">
+                    <div class="musica-titulo" id="musicaTitulo">Sin cancion</div>
+                    <div class="musica-artista" id="musicaArtista">Haz clic en Reproducir</div>
+                </div>
+                <div class="musica-controles">
+                    <button class="musica-btn-shuffle" id="musicaShuffle" onclick="toggleShuffle()">Aleatorio</button>
+                    <button class="musica-btn" onclick="cancionAnterior()">Anterior</button>
+                    <div class="musica-play" id="musicaPlay" onclick="togglePlay()">Reproducir</div>
+                    <button class="musica-btn" onclick="cancionSiguiente()">Siguiente</button>
+                </div>
+            </div>
+            <div class="musica-progreso-container">
+                <div class="musica-progreso" onclick="buscarProgreso(event)">
+                    <div class="musica-progreso-fill" id="musicaProgreso"></div>
+                </div>
+                <div class="musica-tiempo">
+                    <span id="musicaTiempoActual">0:00</span>
+                    <span id="musicaTiempoTotal">0:00</span>
+                </div>
+            </div>
+            <div class="musica-volumen">
+                <input type="range" min="0" max="1" step="0.1" value="0.7" onchange="cambiarVolumen(this.value)">
+            </div>
+            <audio id="musicaAudio" preload="none"></audio>
+        </div>
+        {% endif %}
+
+        <script>
+            const audio = document.getElementById('musicaAudio');
+            const playBtn = document.getElementById('musicaPlay');
+            const shuffleBtn = document.getElementById('musicaShuffle');
+            const progreso = document.getElementById('musicaProgreso');
+            const titActual = document.getElementById('musicaTiempoActual');
+            const titTotal = document.getElementById('musicaTiempoTotal');
+            const titCancion = document.getElementById('musicaTitulo');
+            let indiceActual = 0;
+            let canciones = {{ musica | tojson | safe }};
+            let shuffleOn = false;
+            let historial = [];
+            let isPlaying = false;
+
+            const savedMusica = sessionStorage.getItem('quiz_musica');
+            if (savedMusica) {
+                const s = JSON.parse(savedMusica);
+                if (s.indiceActual !== undefined) indiceActual = s.indiceActual;
+                if (s.shuffleOn !== undefined) shuffleOn = s.shuffleOn;
+                if (s.historial !== undefined) historial = s.historial;
+                if (s.isPlaying !== undefined) isPlaying = s.isPlaying;
+                if (s.titCancion !== undefined) titCancion.textContent = s.titCancion;
+                if (shuffleBtn) shuffleBtn.classList.toggle('activo', shuffleOn);
+                if (playBtn) playBtn.textContent = isPlaying ? 'Pausa' : 'Reproducir';
+            }
+
+            function togglePlay() {
+                if (!canciones || canciones.length === 0) return;
+                if (isPlaying) {
+                    audio.pause();
+                    playBtn.textContent = 'Reproducir';
+                    isPlaying = false;
+                } else {
+                    audio.play();
+                    playBtn.textContent = 'Pausa';
+                    isPlaying = true;
+                }
+            }
+
+            function toggleShuffle() {
+                shuffleOn = !shuffleOn;
+                shuffleBtn.classList.toggle('activo', shuffleOn);
+                historial = [];
+            }
+
+            function obtenerSiguienteIndice() {
+                if (shuffleOn) {
+                    let candidatos = canciones.map((_, i) => i).filter(i => i !== indiceActual && !historial.includes(i));
+                    if (candidatos.length === 0) {
+                        historial = [];
+                        candidatos = canciones.map((_, i) => i).filter(i => i !== indiceActual);
+                    }
+                    const aleatorio = candidatos[Math.floor(Math.random() * candidatos.length)];
+                    historial.push(aleatorio);
+                    if (historial.length > canciones.length) historial.shift();
+                    return aleatorio;
+                } else {
+                    return (indiceActual + 1) % canciones.length;
+                }
+            }
+
+            function obtenerAnteriorIndice() {
+                if (shuffleOn && historial.length > 1) {
+                    historial.pop();
+                    const prev = historial[historial.length - 1];
+                    return prev !== undefined ? prev : (indiceActual - 1 + canciones.length) % canciones.length;
+                } else {
+                    return (indiceActual - 1 + canciones.length) % canciones.length;
+                }
+            }
+
+            function cambiarCancion(idx) {
+                if (!canciones || canciones.length === 0) return;
+                indiceActual = idx;
+                const archivo = canciones[indiceActual];
+                audio.src = '/musica/' + encodeURIComponent(archivo);
+                audio.load();
+                audio.play();
+                playBtn.textContent = 'Pausa';
+                isPlaying = true;
+                titCancion.textContent = archivo;
+            }
+
+            function cancionAnterior() {
+                cambiarCancion(obtenerAnteriorIndice());
+            }
+
+            function cancionSiguiente() {
+                cambiarCancion(obtenerSiguienteIndice());
+            }
+
+            function cambiarVolumen(v) {
+                audio.volume = v;
+            }
+
+            function buscarProgreso(e) {
+                const rect = e.currentTarget.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const pct = x / rect.width;
+                audio.currentTime = pct * audio.duration;
+            }
+
+            audio.addEventListener('timeupdate', () => {
+                if (audio.duration) {
+                    const pct = (audio.currentTime / audio.duration) * 100;
+                    document.getElementById('musicaProgreso').style.width = pct + '%';
+                    const m = Math.floor(audio.currentTime / 60);
+                    const s = Math.floor(audio.currentTime % 60).toString().padStart(2, '0');
+                    titActual.textContent = m + ':' + s;
+                    const m2 = Math.floor(audio.duration / 60);
+                    const s2 = Math.floor(audio.duration % 60).toString().padStart(2, '0');
+                    titTotal.textContent = m2 + ':' + s2;
+                }
+            });
+
+            audio.addEventListener('ended', () => {
+                cancionSiguiente();
+            });
+
+            audio.addEventListener('error', (e) => {
+                console.error('Error de audio:', e);
+                titCancion.textContent = 'Error cargando cancion';
+            });
+
+            window.addEventListener('beforeunload', () => {
+                sessionStorage.setItem('quiz_musica', JSON.stringify({
+                    indiceActual,
+                    shuffleOn,
+                    historial,
+                    isPlaying,
+                    titCancion: titCancion ? titCancion.textContent : ''
+                }));
+            });
+        </script>
+    </div>
+</body>
+</html>

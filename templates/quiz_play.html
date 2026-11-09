@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz del Himno Nacional de Honduras</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Quiz del Himno Nacional de Honduras</h1>
+            <div class="progress">
+                <div class="progress-bar" id="progresoBar" style="width: 0%"></div>
+            </div>
+            <div class="progress-text" id="progresoTexto">Pregunta 1 de {{ total }}</div>
+            <a href="{{ url_for('index') }}" class="btn btn-secondary">Salir</a>
+        </header>
+
+        <div class="card quiz-card">
+            <div id="quizContent">Cargando...</div>
+        </div>
+
+        {% if musica %}
+        <div class="card spotify-card" style="position: sticky; top: 20px;">
+            <h3>Musica de fondo</h3>
+            <div class="musica-buscar">
+                <input type="text" id="buscarMusica" placeholder="Buscar cancion..." onchange="filtrarMusica(this.value)">
+            </div>
+            <div class="musica-lista" id="musicaLista"></div>
+            <div class="musica-player">
+                <div class="musica-portada">♪</div>
+                <div class="musica-info">
+                    <div class="musica-titulo" id="musicaTitulo">Sin cancion</div>
+                    <div class="musica-artista" id="musicaArtista">Haz clic en Reproducir</div>
+                </div>
+                <div class="musica-controles">
+                    <button class="musica-btn-shuffle" id="musicaShuffle" onclick="toggleShuffle()">Aleatorio</button>
+                    <button class="musica-btn" onclick="cancionAnterior()">Anterior</button>
+                    <button class="musica-btn" id="musicaPlay" onclick="togglePlay()">Reproducir</button>
+                    <button class="musica-btn" onclick="cancionSiguiente()">Siguiente</button>
+                </div>
+            </div>
+            <div class="musica-progreso-container">
+                <div class="musica-progreso" id="musicaProgresoBar" onclick="buscarProgreso(event)">
+                    <div class="musica-progreso-fill" id="musicaProgreso"></div>
+                </div>
+                <div class="musica-tiempo">
+                    <span id="musicaTiempoActual">0:00</span>
+                    <span id="musicaTiempoTotal">0:00</span>
+                </div>
+            </div>
+            <div class="musica-volumen">
+                <input type="range" min="0" max="1" step="0.1" value="0.7" onchange="cambiarVolumen(this.value)">
+            </div>
+            <audio id="musicaAudio"></audio>
+        </div>
+        {% endif %}
+    </div>
+
+    <script>
+        const canciones = {{ musica | tojson | safe }};
+        let cancionesFiltradas = canciones;
+        let indiceActual = 0;
+        let shuffleOn = false;
+        let historial = [];
+        let isPlaying = false;
+
+        const saved = sessionStorage.getItem('quiz_musica');
+        if (saved) {
+            try {
+                const s = JSON.parse(saved);
+                if (s.indiceActual !== undefined) indiceActual = s.indiceActual;
+                if (s.shuffleOn !== undefined) shuffleOn = s.shuffleOn;
+                if (s.historial !== undefined) historial = s.historial;
+                if (s.isPlaying !== undefined) isPlaying = s.isPlaying;
+            } catch (e) {}
+        }
+
+        const audio = document.getElementById('musicaAudio');
+        const playBtn = document.getElementById('musicaPlay');
+        const shuffleBtn = document.getElementById('musicaShuffle');
+        const progresoBar = document.getElementById('musicaProgreso');
+        const titActual = document.getElementById('musicaTiempoActual');
+        const titTotal = document.getElementById('musicaTiempoTotal');
+        const titCancion = document.getElementById('musicaTitulo');
+
+        if (shuffleBtn) shuffleBtn.classList.toggle('activo', shuffleOn);
+        if (playBtn) playBtn.textContent = isPlaying ? 'Pausa' : 'Reproducir';
+
+        function obtenerSiguienteIndice() {
+            if (shuffleOn) {
+                let candidatos = canciones.map((_, i) => i).filter(i => i !== indiceActual && !historial.includes(i));
+                if (candidatos.length === 0) {
+                    historial = [];
+                    candidatos = canciones.map((_, i) => i).filter(i => i !== indiceActual);
+                }
+                const aleatorio = candidatos[Math.floor(Math.random() * candidatos.length)];
+                historial.push(aleatorio);
+                if (historial.length > canciones.length) historial.shift();
+                return aleatorio;
+            } else {
+                return (indiceActual + 1) % canciones.length;
+            }
+        }
+
+        function obtenerAnteriorIndice() {
+            if (shuffleOn && historial.length > 1) {
+                historial.pop();
+                const prev = historial[historial.length - 1];
+                return prev !== undefined ? prev : (indiceActual - 1 + canciones.length) % canciones.length;
+            } else {
+                return (indiceActual - 1 + canciones.length) % canciones.length;
+            }
+        }
+
+        function cambiarCancion(idx) {
+            if (!canciones || canciones.length === 0) return;
+            indiceActual = idx;
+            const archivo = canciones[indiceActual];
+            audio.src = '/musica/' + encodeURIComponent(archivo);
+            audio.load();
+            audio.play().catch(e => console.error('Error:', e));
+            playBtn.textContent = 'Pausa';
+            isPlaying = true;
+            titCancion.textContent = archivo;
+            guardarEstado();
+        }
+
+        function cancionAnterior() { cambiarCancion(obtenerAnteriorIndice()); }
+        function cancionSiguiente() { cambiarCancion(obtenerSiguienteIndice()); }
+
+        function togglePlay() {
+            if (!canciones || canciones.length === 0) return;
+            if (isPlaying) {
+                audio.pause();
+                playBtn.textContent = 'Reproducir';
+                isPlaying = false;
+            } else {
+                if (!audio.src) {
+                    const archivo = canciones[indiceActual];
+                    audio.src = '/musica/' + encodeURIComponent(archivo);
+                    audio.load();
+                    titCancion.textContent = archivo;
+                }
+                audio.play().catch(e => console.error('Error:', e));
+                playBtn.textContent = 'Pausa';
+                isPlaying = true;
+            }
+            guardarEstado();
+        }
+
+        function toggleShuffle() {
+            shuffleOn = !shuffleOn;
+            if (shuffleBtn) shuffleBtn.classList.toggle('activo', shuffleOn);
+            historial = [];
+            guardarEstado();
+        }
+
+        function cambiarVolumen(v) { audio.volume = v; }
+
+        function buscarProgreso(e) {
+            const rect = e.currentTarget.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const pct = x / rect.width;
+            audio.currentTime = pct * audio.duration;
+        }
+
+        function guardarEstado() {
+            sessionStorage.setItem('quiz_musica', JSON.stringify({
+                indiceActual, shuffleOn, historial, isPlaying,
+                titCancion: titCancion ? titCancion.textContent : ''
+            }));
+        }
+
+        function filtrarMusica(texto) {
+            const filtro = texto.toLowerCase().trim();
+            const lista = document.getElementById('musicaLista');
+            if (!filtro) {
+                cancionesFiltradas = canciones;
+                lista.innerHTML = '';
+                return;
+            }
+            cancionesFiltradas = canciones.filter(c => c.toLowerCase().includes(filtro));
+            lista.innerHTML = cancionesFiltradas.map((c, i) => `
+                <div class="musica-item" onclick="seleccionarCancion('${c.replace(/'/g, "\\'")}')">${c}</div>
+            `).join('');
+        }
+
+        function seleccionarCancion(nombre) {
+            const idx = canciones.indexOf(nombre);
+            if (idx !== -1) {
+                indiceActual = idx;
+                cambiarCancion(indiceActual);
+                document.getElementById('musicaLista').innerHTML = '';
+                document.getElementById('buscarMusica').value = '';
+                cancionesFiltradas = canciones;
+            }
+        }
+
+        audio.addEventListener('timeupdate', () => {
+            if (audio.duration) {
+                const pct = (audio.currentTime / audio.duration) * 100;
+                document.getElementById('musicaProgreso').style.width = pct + '%';
+                const m = Math.floor(audio.currentTime / 60);
+                const s = Math.floor(audio.currentTime % 60).toString().padStart(2, '0');
+                titActual.textContent = m + ':' + s;
+                const m2 = Math.floor(audio.duration / 60);
+                const s2 = Math.floor(audio.duration % 60).toString().padStart(2, '0');
+                titTotal.textContent = m2 + ':' + s2;
+            }
+        });
+
+        audio.addEventListener('ended', () => { cancionSiguiente(); });
+        audio.addEventListener('error', (e) => {
+            console.error('Error de audio:', e);
+            titCancion.textContent = 'Error cargando cancion';
+        });
+
+        window.addEventListener('beforeunload', guardarEstado);
+
+        /* ---------- Quiz SPA ---------- */
+        const qid = '{{ qid }}';
+        console.log('Quiz iniciado, qid:', qid);
+
+        if (!qid || qid === 'undefined' || qid === 'None' || qid === '') {
+            const newQid = crypto.randomUUID();
+            localStorage.setItem('quiz_qid', newQid);
+            window.location.href = '/quiz/play?qid=' + newQid;
+        }
+
+        const quizContent = document.getElementById('quizContent');
+        const progresoBarHeader = document.getElementById('progresoBar');
+        const progresoTexto = document.getElementById('progresoTexto');
+
+        async function irAFinal() {
+            console.log('Ir al final, qid:', qid);
+            try {
+                const resp = await fetch(`/api/saltar-final?qid=${qid}`, { method: 'POST' });
+                const data = await resp.json();
+                console.log('Saltar final resultado:', data);
+                renderizar(data);
+            } catch (e) {
+                console.error('Error al saltar al final:', e);
+                alert('Error al saltar al final: ' + e.message);
+            }
+        }
+
+        async function cargarPregunta() {
+            console.log('Cargar pregunta, qid:', qid);
+            try {
+                const resp = await fetch(`/api/question?qid=${qid}`);
+                const data = await resp.json();
+                console.log('Pregunta cargada:', data.step, data.numero);
+                renderizar(data);
+            } catch (e) {
+                console.error('Error al cargar pregunta:', e);
+                alert('Error al cargar pregunta: ' + e.message);
+            }
+        }
+
+        async function responder(respuesta) {
+            const url = `/api/question?qid=${qid}&respuesta=${respuesta}`;
+            console.log('Enviando respuesta:', respuesta, 'URL:', url);
+            return fetch(url, { method: 'POST' });
+        }
+
+        function renderizar(data) {
+            console.log('Renderizar:', data.step, data.numero);
+
+            if (data.step === 'question') {
+                progresoBarHeader.style.width = data.progreso + '%';
+                progresoTexto.textContent = `Pregunta ${data.numero} de ${data.total}`;
+                const p = data.pregunta;
+                let opcionesHtml = '';
+                p.opciones.forEach((op, i) => {
+                    opcionesHtml += `
+                        <label class="option-label">
+                            <input type="radio" name="respuesta" value="${i}">
+                            <span>${op}</span>
+                        </label>`;
+                });
+                quizContent.innerHTML = `
+                    <div class="question-block">
+                        <div class="question-number">Pregunta ${data.numero}</div>
+                        <div class="question-text">${p.pregunta}</div>
+                        <div class="options">${opcionesHtml}</div>
+                    </div>
+                    <div class="form-actions">
+                        <button class="btn btn-primary btn-lg" onclick="enviarRespuesta()">Responder</button>
+                    </div>`;
+
+                // Seleccionar la primera opción por defecto
+                setTimeout(() => {
+                    const inputs = document.querySelectorAll('input[name="respuesta"]');
+                    if (inputs.length > 0) inputs[0].checked = true;
+                }, 50);
+            } else if (data.step === 'feedback') {
+                progresoTexto.textContent = `Pregunta ${data.numero} de ${data.total} | Puntaje: ${data.score}`;
+                const r = data.resultado;
+                quizContent.innerHTML = `
+                    <div class="card feedback-card">
+                        <div class="badge ${r.es_correcta ? 'correct-badge' : 'incorrect-badge'}">
+                            ${r.es_correcta ? 'Correcta' : 'Incorrecta'}
+                        </div>
+                        <div class="question-text">${r.pregunta}</div>
+                        ${r.respuesta_usuario ? `<div class="result-answer"><span class="tu-respuesta">Tu respuesta: <strong>${r.respuesta_usuario}</strong></span></div>` : ''}
+                        <div class="result-answer correct-answer">
+                            <span class="respuesta-correcta">Respuesta correcta: <strong>${r.respuesta_correcta}</strong></span>
+                        </div>
+                        <div class="form-actions">
+                            <button class="btn btn-primary btn-lg" onclick="cargarPregunta()">Siguiente Pregunta</button>
+                        </div>
+                    </div>`;
+            } else if (data.step === 'resultados') {
+                progresoBarHeader.style.width = '100%';
+                progresoTexto.textContent = `Resultado final`;
+                const porcentaje = data.porcentaje;
+                const falladas = data.total - data.puntuacion;
+                let msg = '', msgClass = 'message-needs-work';
+                if (porcentaje >= 80) { msg = 'Excelente! Conoces muy bien el himno nacional de Honduras.'; msgClass = 'message-excellent'; }
+                else if (porcentaje >= 60) { msg = 'Bien! Tienes buenos conocimientos, pero puedes mejorar.'; msgClass = 'message-good'; }
+                else { msg = 'Necesitas estudiar mas sobre el himno nacional de Honduras.'; msgClass = 'message-needs-work'; }
+
+                let listaHtml = '';
+                data.resultados.forEach((r) => {
+                    listaHtml += `
+                        <div class="result-item ${r.es_correcta ? 'correct' : 'incorrect'}">
+                            <div class="result-question"><span class="q-number">${r.id}.</span> ${r.pregunta}</div>
+                            <div class="result-answer">
+                                <span class="badge ${r.es_correcta ? 'correct-badge' : 'incorrect-badge'}">
+                                    ${r.es_correcta ? 'Correcta' : 'Incorrecta'}
+                                </span>
+                                ${r.respuesta_usuario ? `<span class="tu-respuesta">Tu respuesta: ${r.respuesta_usuario}</span><br>` : ''}
+                                <span class="respuesta-correcta">Correcta: ${r.respuesta_correcta}</span>
+                            </div>
+                        </div>`;
+                });
+
+                document.getElementById('modalResultado').innerHTML = `
+                    <div class="score-card">
+                        <div class="stats-summary">
+                            <div class="stat-item">
+                                <span class="stat-number">${data.puntuacion}</span>
+                                <span class="stat-label">Correctas</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">${falladas}</span>
+                                <span class="stat-label">Falladas</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">${porcentaje}%</span>
+                                <span class="stat-label">Porcentaje</span>
+                            </div>
+                        </div>
+                        <div class="score-display">
+                            <span class="score-number">${data.puntuacion}</span>
+                            <span class="score-text">de ${data.total} correctas</span>
+                            <span class="score-text falladas">(${falladas} falladas)</span>
+                        </div>
+                        <div class="score-percentage">${porcentaje}%</div>
+                        <div class="score-message"><span class="${msgClass}">${msg}</span></div>
+                    </div>
+                    <div class="card results-card">
+                        <h2>Detalle de respuestas</h2>
+                        ${listaHtml}
+                    </div>
+                    <div class="form-actions">
+                        <button class="btn btn-primary btn-lg" onclick="cerrarModal(); location.href='/quiz';">Intentar de nuevo</button>
+                    </div>`;
+                document.getElementById('modalOverlay').classList.add('activo');
+                console.log('Modal mostrado');
+            }
+        }
+
+        async function enviarRespuesta() {
+            console.log('enviarRespuesta llamado');
+            const inputs = document.querySelectorAll('input[name="respuesta"]');
+            console.log('Inputs encontrados:', inputs.length);
+            let seleccionada = -1;
+            for (let i = 0; i < inputs.length; i++) {
+                if (inputs[i].checked) {
+                    seleccionada = i;
+                    break;
+                }
+            }
+            console.log('Seleccionada:', seleccionada);
+            if (seleccionada < 0) {
+                alert('Selecciona una respuesta');
+                return;
+            }
+            try {
+                const resp = await responder(seleccionada);
+                console.log('Status del servidor:', resp.status);
+                const data2 = await resp.json();
+                console.log('Resultado:', data2);
+                renderizar(data2);
+            } catch (e) {
+                console.error('Error al enviar respuesta:', e);
+                alert('Error al enviar respuesta: ' + e.message);
+            }
+        }
+
+        cargarPregunta();
+
+        function cerrarModal() {
+            document.getElementById('modalOverlay').classList.remove('activo');
+        }
+
+        // Cerrar modal al hacer clic fuera del contenido
+        document.getElementById('modalOverlay').addEventListener('click', function(e) {
+            if (e.target === document.getElementById('modalOverlay')) {
+                cerrarModal();
+            }
+        });
+    </script>
+
+    <div id="modalOverlay" class="modal-overlay">
+        <div class="modal-container">
+            <button class="modal-cerrar" onclick="cerrarModal()">&times;</button>
+            <div id="modalResultado"></div>
+        </div>
+    </div>
+</body>
+</html>

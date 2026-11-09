@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Himno Nacional</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Quiz del Himno Nacional</h1>
+            <a href="{{ url_for('index') }}" class="btn btn-secondary">Volver al inicio</a>
+        </header>
+
+        <div class="card quiz-card">
+            <form action="{{ url_for('check') }}" method="POST" id="quizForm">
+                {% for pregunta in preguntas %}
+                <div class="question-block">
+                    <div class="question-number">Pregunta {{ loop.index }}</div>
+                    <div class="question-text">{{ pregunta.pregunta }}</div>
+                    <div class="options">
+                        {% for opcion in pregunta.opciones %}
+                        <label class="option-label">
+                            <input type="radio" name="{{ pregunta.id }}" value="{{ loop.index0 }}" required>
+                            <span>{{ opcion }}</span>
+                        </label>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary btn-lg">Verificar Respuestas</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,502 @@
+[
+  {
+    "id": 1,
+    "pregunta": "Â¿Que es nuestro Himno Nacional?",
+    "respuesta": "Es el canto oficial de todos los hondureÃ±os y nos expresa un sentimiento colectivo de amor, gratitud, lealtad y respeto en aras de los mÃ¡s caros intereses nacionales."
+  },
+  {
+    "id": 2,
+    "pregunta": "Â¿Como esta compuesto el Himno Nacional literalmente?",
+    "respuesta": "Literalmente esta compuesto de ocho estrofas incluyendo el coro y cada estrofa esta formada por ocho versos decasÃ­labos, siendo en su total 64 versos."
+  },
+  {
+    "id": 3,
+    "pregunta": "Â¿DÃ³nde lleva el acento mÃ©trico cada verso del Himno Nacional?",
+    "respuesta": "En la tercera, sexta y novena sílaba"
+  },
+  {
+    "id": 4,
+    "pregunta": "Â¿Con quÃ© ritmo debe cantarse el Himno Nacional?",
+    "respuesta": "Musicalmente consta de 7 estrofas llamadas solos y el coro que se repite al final de cada estrofa"
+  },
+  {
+    "id": 5,
+    "pregunta": "Â¿En quÃ© tonalidad debe hacerse la entonaciÃ³n del Himno Nacional?",
+    "respuesta": "En la tonalidad de Si bemol Mayor, ya que es la tonalidad que ofrece mayor comodidad para el registro vocal de los niÃ±os."
+  },
+  {
+    "id": 6,
+    "pregunta": "Â¿CÃ³mo se le llama al movimiento musical del coro?",
+    "respuesta": "Se le llama ALLEGRO que quiere decir alegre, airoso, marcial y expresivo"
+  },
+  {
+    "id": 7,
+    "pregunta": "Â¿CÃ³mo se le llama al movimiento musical del solo?",
+    "respuesta": "Se le llama ANDANTE y quiere decir lento, pasivo, moderado y triste"
+  },
+  {
+    "id": 8,
+    "pregunta": "Â¿En quÃ© tiempo del compÃ¡s se empieza a cantar el Himno Nacional?",
+    "respuesta": "Al cuarto tiempo del compÃ¡s"
+  },
+  {
+    "id": 9,
+    "pregunta": "Â¿QuiÃ©n es el autor de la letra de nuestro Himno Nacional?",
+    "respuesta": "El Poeta Augusto Constancio Coello EstÃ©vez, nacido en la ciudad de Tegucigalpa un 1 de Septiembre de 1883 y falleciÃ³ en la ciudad de San Salvador el 8 de Septiembre de de 1941."
+  },
+  {
+    "id": 10,
+    "pregunta": "Â¿QuiÃ©n es el autor de la mÃºsica del Himno Nacional?",
+    "respuesta": "Es el Maestro Carlos Hartling, nacido un 2 de Septiembre de 1869 en el pequeÃ±o poblado de Schtlotheim, Erfurt, Capital del estado de Turingia, Alemania Federal y falleciÃ³ en la ciudad de Santa Tecla, El Salvador un 13 de Agosto de 1920."
+  },
+  {
+    "id": 11,
+    "pregunta": "Â¿QuiÃ©n es el autor del argumento y explicaciÃ³n del Himno Nacional?",
+    "respuesta": "Es el Licenciado Guadalberto Palacios, nacido en la Aldea de San JerÃ³nimo, Municipio de JesÃºs de Otoro, departamento de Intibuca."
+  },
+  {
+    "id": 12,
+    "pregunta": "Â¿Que Himnos se cantaban antes de que se oficializara el Himno Nacional?",
+    "respuesta": "Se cantaban varios himnos entre los siguientes:"
+  },
+  {
+    "id": 13,
+    "pregunta": "Â¿QuÃ© nos relata nuestro Himno Nacional histÃ³ricamente?",
+    "respuesta": "Dentro del orden cronolÃ³gico nos relata la historia de nuestra patria, desde el periodo precolombino-descubrimiento-conquista-colonizaciÃ³n y la proclamaciÃ³n de independencia de 1821."
+  },
+  {
+    "id": 14,
+    "pregunta": "Â¿DÃ³nde se cantÃ³ por primera vez nuestro Himno Nacional?",
+    "respuesta": ""
+  },
+  {
+    "id": 15,
+    "pregunta": "Â¿Con quÃ© objeto se cantÃ³ nuevamente en el Puerto de Amapala en el aÃ±o 1907?",
+    "respuesta": "Con motivo de reunirse en ese lugar los presidentes centroamericanos, quedando desde entonces en uso para las recepciones y demÃ¡s actos oficiales."
+  },
+  {
+    "id": 16,
+    "pregunta": "Â¿Oficialmente dÃ³nde se cantÃ³ por primera vez nuestro Himno Nacional?",
+    "respuesta": "Oficialmente se cantÃ³ por primera vez en la Escuela Normal de SeÃ±oritas de Comayaguela, con la solemnidad de un Himno Nacional legalmente reconocido."
+  },
+  {
+    "id": 17,
+    "pregunta": "Â¿QuiÃ©n fue Don Miguel R. DÃ¡vila?",
+    "respuesta": "Fue el Presidente de la RepÃºblica que sancionÃ³ el 5 de Abril de 1910 el Decreto No. 115 por medio del cual se abrÃ­a el concurso para escribir la letra y la mÃºsica del Himno Nacional."
+  },
+  {
+    "id": 18,
+    "pregunta": "Â¿A iniciativa de quÃ© diputados se emitiÃ³ el Decreto No. 115 del 5 de Abril de 1910 y de quÃ© trata?",
+    "respuesta": ""
+  },
+  {
+    "id": 19,
+    "pregunta": "Â¿Que simboliza nuestro Himno Nacional?",
+    "respuesta": "Simboliza el alma de la Patria y expresa el jÃºbilo impetuoso, el encendido entusiasmo y el amor sacrosanto de sus hijos."
+  },
+  {
+    "id": 20,
+    "pregunta": "Â¿QuÃ© Presidente dio vida oficial a nuestro Himno Nacional?",
+    "respuesta": "El Doctor Alberto MembreÃ±o en el aÃ±o de 1915 mediante resoluciÃ³n en consejo de Ministros."
+  },
+  {
+    "id": 21,
+    "pregunta": "Â¿QuÃ© Decreto emitiÃ³ el Poder Ejecutivo para declarar oficial nuestro Himno Nacional?",
+    "respuesta": "El poder Ejecutivo constituÃ­do por el Presidente de la RepÃºblica, Doctor Alberto MembreÃ±o en Consejo de Ministros emitiÃ³ el Decreto No. 42 del 3 de Noviembre de 1915."
+  },
+  {
+    "id": 22,
+    "pregunta": "Â¿Por quÃ© Ã³rgano fue publicado el decreto No. 42 del Poder Ejecutivo?",
+    "respuesta": "Fue publicado por el diario oficial Â«La GacetaÂ» correspondiente al No. 4529 del 15 de enero de 1916."
+  },
+  {
+    "id": 23,
+    "pregunta": "Â¿Por quÃ© decreto fueron aprobadas las disposiciones emitidas del Poder Ejecutivo?",
+    "respuesta": "Fueron aprobadas por Decreto No. 34 de fecha 23 de enero de 1917 por el Soberano Congreso Nacional."
+  },
+  {
+    "id": 24,
+    "pregunta": "Â¿QuiÃ©n era el Secretario de Estado en el Despacho de InstrucciÃ³n Publica cuando se aprobÃ³ el Decreto No. 42? R= El Abogado RÃ³mulo E. DurÃ³n",
+    "respuesta": ""
+  },
+  {
+    "id": 25,
+    "pregunta": "Â¿Quien fue el General Manuel Bonilla?",
+    "respuesta": "Fue el primer presidente de la RepÃºblica que recibiÃ³ honores con la ejecuciÃ³n del Himno nacional."
+  },
+  {
+    "id": 26,
+    "pregunta": "Â¿En que se basa el articulo 418 del Codigo de InstrucciÃ³n Publica del 29 de marzo de 1923? R= Que con Ã©l se instituyÃ³ el culto a la Bandera y el canto del Himno Nacional en todos los centros educativos del paÃ­s.",
+    "respuesta": ""
+  },
+  {
+    "id": 27,
+    "pregunta": "Â¿QuÃ© debe hacer un director despues de haberse interpretado el Himno Nacional en la forma que seÃ±ala la ley?",
+    "respuesta": ""
+  },
+  {
+    "id": 28,
+    "pregunta": "QuÃ© constituyen las voces del Himno Nacional comprendidas desde la primera hasta la sexta estrofa R= Constituyen una alusiÃ³n en orden cronolÃ³gico de los principales hechos y fenÃ³menos histÃ³ricos, comenzando con la existencia precolombina y terminando con la organizaciÃ³n del Estado libre, soberano independiente.",
+    "respuesta": ""
+  },
+  {
+    "id": 29,
+    "pregunta": "Â¿CÃ³mo se define la palabra HIMNO en tÃ©rminos generales?",
+    "respuesta": "HIMNO en tÃ©rminos generales es la expresiÃ³n y sÃ­mbolo de pueblos y naciones"
+  },
+  {
+    "id": 30,
+    "pregunta": "Â¿Cuales son nuestros sÃ­mbolos mayores?",
+    "respuesta": "SegÃºn su orden de creaciÃ³n son: El Escudo, la Bandera y el Himno Nacional"
+  },
+  {
+    "id": 31,
+    "pregunta": "Â¿Cuales son nuestros sÃ­mbolos Menores?",
+    "respuesta": "Son la Madre, nuestros patricios o hÃ©roes nacionales, el idioma Nacional o lengua materna, el Pino, la OrquÃ­dea, la Moneda, el Mapa, etc."
+  },
+  {
+    "id": 32,
+    "pregunta": "Â¿CÃ³mo debemos marcar el compÃ¡s de cuatro cuartos para dirigir la ejecuciÃ³n o entonaciÃ³n de nuestro Himno Nacional?",
+    "respuesta": ""
+  },
+  {
+    "id": 33,
+    "pregunta": "Â¿CÃ³mo es el Himno Nacional de Honduras en relaciÃ³n a los demÃ¡s himnos de Centro AmÃ©rica? R= Es eminentemente poÃ©tico y pacifista con excepciÃ³n de la Ãºltima estrofa que nos invita a defender la Patria, es menos extenso que el de Guatemala y El Salvador y su mÃºsica esta inspirada en las marchas alemanas.",
+    "respuesta": ""
+  },
+  {
+    "id": 34,
+    "pregunta": "Â¿QuÃ© dificultades presenta la mÃºsica de nuestro Himno Nacional?",
+    "respuesta": "Presenta dificultades de entonaciÃ³n para las voces masculinas, siendo alcanzables con mayor facilidad las notas por las voces femeninas."
+  },
+  {
+    "id": 35,
+    "pregunta": "Â¿De dÃ³nde se origina la palabra HIMNO?",
+    "respuesta": "HIMNO viene del griego hymnos, que a su vez se deriva de Hydo, que significa: Yo canto."
+  },
+  {
+    "id": 36,
+    "pregunta": "Â¿CuÃ¡l es el primer himno que da a conocer la historia humana?",
+    "respuesta": "El primer himno se cree que fue escrito veinte siglos antes de Jesucristo, data de la edad antigua, tiene caracteres religiosos y estÃ¡ dedicado a Brahma, dios de los Brahamanes en la India."
+  },
+  {
+    "id": 37,
+    "pregunta": "Â¿En quÃ© Ã©poca y en quÃ© lugar apareciÃ³ el primer himno patriÃ³tico?",
+    "respuesta": "ApareciÃ³ en Francia, en la edad moderna y contemporÃ¡nea llamado por el pueblo francÃ©s Â«La FrondaÂ» y un siglo despuÃ©s aparecieron los himnos Â«La CarmagnoleÂ», Â«La MarsellesaÂ» y Â«La Cai-rÃ¡Â» cantados todos ellos por las masas populares."
+  },
+  {
+    "id": 38,
+    "pregunta": "Â¿DÃ³nde se encuentra el verdadero mÃ©rito de los himnos?",
+    "respuesta": "El mÃ©rito de los himnos radica en: Que sean la expresiÃ³n intensa de las virtudes cÃ­vicas o religiosas de los pueblos para quienes son hechos."
+  },
+  {
+    "id": 39,
+    "pregunta": "En cuanto a la letra, Â¿QuÃ© crÃ­ticas se le hacen a nuestro Himno Nacional?",
+    "respuesta": "En cuanto a la letra se le atribuye que el poema es muy extenso; sin embargo son varios los himnos nacionales de AmÃ©rica que son mÃ¡s extensos que el nuestro por ejemplo: Los himnos de Argentina, Colombia, Uruguay, Brasil, Guatemala, etc."
+  },
+  {
+    "id": 40,
+    "pregunta": "Â¿En cuanto a la mÃºsica, Â¿QuÃ© crÃ­ticas se le hacen a nuestro Himno Nacional?",
+    "respuesta": "En cuanto a la mÃºsica se afirma que ha sido tachada de incongruente, no adecuada, sin ritmo elevado sin carÃ¡cter masculino que exprese los atributos de la naciÃ³n hondureÃ±a."
+  },
+  {
+    "id": 41,
+    "pregunta": "Â¿Existen razones para afirmar que nuestro Himno Nacional es autenticamente original? R= Existen muchas razones, desde el punto de vista literario a diferencia de otras composiciones poÃ©ticas, nos narra y nos relata las diferentes etapas de nuestra historia y desde el punto de vista musical podemos afirmar que no se parece parcial o totalmente con los himnos de otros paÃ­ses.",
+    "respuesta": ""
+  },
+  {
+    "id": 42,
+    "pregunta": "Â¿QuÃ© nos dice el artÃ­culo No. 7 del Decreto 131 emitido por el Soberano congreso Nacional el 11 de Enero de 1982?",
+    "respuesta": ""
+  },
+  {
+    "id": 43,
+    "pregunta": "Â¿Cuales son los cuatro aspectos que contiene nuestro Himno Nacional?",
+    "respuesta": "Son los siguientes: el primero es HistÃ³rico, el segundo es PatriÃ³tico, el tercero es JurÃ­dico y el cuarto artÃ­stico."
+  },
+  {
+    "id": 44,
+    "pregunta": "Â¿Por quÃ© razÃ³n podemos afirmar que nuestro Himno Nacional es patriÃ³tico?",
+    "respuesta": "Por su sÃ©ptima y Ãºltima estrofa"
+  },
+  {
+    "id": 45,
+    "pregunta": "Â¿Por quÃ© razÃ³n podemos asegurar que es HistÃ³rico?",
+    "respuesta": "Porque en el orden cronolÃ³gico de la primera a la sexta estrofa nos habla de acontecimientos ocurridos desde la Ã©poca precolombina hasta nuestros dÃ­as."
+  },
+  {
+    "id": 46,
+    "pregunta": "Â¿Por quÃ© razÃ³n nuestro Himno Nacional tiene carÃ¡cter jurÃ­dico?",
+    "respuesta": "Porque esta amparado en sus dos decretos que para nosotros los hondureÃ±os son leyes; estos decretos son el No. 42 de su emisiÃ³n y el decreto No. 34 de su aprobaciÃ³n."
+  },
+  {
+    "id": 47,
+    "pregunta": "Â¿Por quÃ© razÃ³n nuestro Himno Nacional tiene carÃ¡cter artÃ­sitico?",
+    "respuesta": "Por su letra y su mÃºsica. En la letra nos encontramos con un bello poema y en la mÃºsica con una extraordinaria obra musical."
+  },
+  {
+    "id": 48,
+    "pregunta": "Â¿CuÃ¡l es la explicaciÃ³n del CORO de nuestro Himno Nacional?",
+    "respuesta": "En sus primeros cuatro versos se refiere a la Bandera que en su color azul simboliza al cielo que estÃ¡ cruzado por una franja blanca que significa paz, serenidad y pureza."
+  },
+  {
+    "id": 49,
+    "pregunta": "Â¿CuÃ¡l es la explicaciÃ³n de la primera estrofa del SOLO?",
+    "respuesta": "Se refiere a nuestro paÃ­s que antes de ser descubierto por Cristobal ColÃ³n en el aÃ±o 1502, estaba habitado por indÃ­genas a los que ColÃ³n les llamo Â«indiosÂ»."
+  },
+  {
+    "id": 50,
+    "pregunta": "Â¿CuÃ¡l es la explicaciÃ³n de la segunda estrofa del SOLO?",
+    "respuesta": "Cristobal ColÃ³n soÃ±aba con encontrar una ruta mÃ¡s corta para llegar a las Indias Orientales, superando muchas dificultades organizÃ³ sus expediciones y se lanzÃ³ a navegar; siendo en el cuarto y Ãºltimo viaje que descubriÃ³ a Honduras tomando posesiÃ³n del territorio el 17 de agosto del aÃ±o 1502 en nombre de los Reyes espaÃ±oles Fernando e Isabel."
+  },
+  {
+    "id": 51,
+    "pregunta": "Â¿CuÃ¡l es la explicaciÃ³n de la tercera estrofa del SOLO?",
+    "respuesta": "DespuÃ©s del descubrimiento hecho por ColÃ³n, vinieron los conquistadores espaÃ±oles atraÃ­dos por la codicia, la curiosidad y la ambiciÃ³n."
+  },
+  {
+    "id": 52,
+    "pregunta": "Â¿CuÃ¡l es la explicaciÃ³n de la cuarta estrofa del SOLO?",
+    "respuesta": "Tres siglos nuestra Patria estuvo sometida bajo el dominio de EspaÃ±a, mientras nuestros nativos obedecÃ­an y servÃ­an como esclavos. Los anhelos de libertad por parte de nuestro pueblo se perdÃ­an entre la oprobiosa esclavitud. Por fin nuestra Patria escuchÃ³ el grito libertador que venÃ­a del otro lado del OcÃ©ano AtlÃ¡ntico a travÃ©s del movimiento revolucionario FrancÃ©s."
+  },
+  {
+    "id": 53,
+    "pregunta": "Â¿CuÃ¡l es la explicaciÃ³n de la quinta estrofa del SOLO?",
+    "respuesta": "Fue el movimiento polÃ­tico francÃ©s de 1789 el que hizo que predominara la voluntad del pueblo reconociendo los derechos de Libertad, Igualdad y Fraternidad bajo el liderazgo del orador y estadista Jorge Jacobo DantÃ³n."
+  },
+  {
+    "id": 54,
+    "pregunta": "Â¿CuÃ¡l es la explicaciÃ³n de la sexta estrofa del SOLO? R= AsÃ­ como Francia nuestra Patria tambiÃ©n logrÃ³ romper las cadenas que la ataban proclamando su independencia de EspaÃ±a un 15 de Septiembre de 1821. Los pliegos que contenÃ­an la proclama de independencia llegaron a Tegucigalpa en la tarde del dÃ­a 28 de Septiembre suceso que fue celebrado con jÃºbilo y respeto por toda la ciudadanÃ­a. Desde entonces desapareciÃ³ la dominaciÃ³n espaÃ±ola a manera de un ave negra y daÃ±ina que se perdiÃ³ en el horizonte para que nuestra Patria quedara libre.",
+    "respuesta": ""
+  },
+  {
+    "id": 55,
+    "pregunta": "Â¿CuÃ¡l es la explicaciÃ³n de la sÃ©ptima estrofa del SOLO? R= Nuestra Patria no serÃ¡ mancillada mientras sus hijos estemos prestos a defenderla con honor, lealtad, valor, dignidad y sacrificio cobijados todos con nuestra bandera nacional que para nosotros es sagrada porque encierra el orgullo y la dignidad colectiva de todo el pueblo hondureÃ±o. Morir por defender nuestra Patria significarÃ­a llenarnos de gloria y serÃ¡ un gran ejemplo para las generaciones futuras.",
+    "respuesta": ""
+  },
+  {
+    "id": 56,
+    "pregunta": "Â¿QuÃ© es la Bandera? R= En su mÃ¡s alta significaciÃ³n, es el sÃ­mbolo de la nacionalidad y representaciÃ³n genuina de la Patria.",
+    "respuesta": ""
+  },
+  {
+    "id": 57,
+    "pregunta": "Â¿QuÃ© simboliza la Bandera? R= Simboliza el manto o se el vestido inmaculado de la Patria",
+    "respuesta": ""
+  },
+  {
+    "id": 58,
+    "pregunta": "Â¿CuÃ¡l es la representaciÃ³n mÃ¡s antigua que se conoce con respecto a la Bandera? R= SegÃºn lo revelan las pinturas de cerÃ¡mica descubiertas en las tumbas de la Ã©poca primaria en Egipto.",
+    "respuesta": ""
+  },
+  {
+    "id": 59,
+    "pregunta": "Â¿CÃ³mo consideraban los Egipcios a la Bandera? R= Los Egipcios consideraban a la bandera como un sÃ­mbolo de uniÃ³n entre los hombres de una misma causa y su sola presencia en los combates servÃ­a para guiarlos y reunirlos.",
+    "respuesta": ""
+  },
+  {
+    "id": 60,
+    "pregunta": "Â¿Quienes le dieron su denominaciÃ³n de Bandera ? R= Los romanos en la edad media le dieron la denominaciÃ³n de Bandum, que quiere decir Bandera; para significar el antiguo signum. Los legionarios romanos la honraban con sus proezas y juraban por ella y le brindaban todo el respeto y veneraciÃ³n que merece.",
+    "respuesta": ""
+  },
+  {
+    "id": 61,
+    "pregunta": "Â¿QuÃ© Bandera quedÃ³ usando Honduras al independizarse del dominio espaÃ±ol? R= QuedÃ³ usando la Bandera de la UniÃ³n Centroamericana.",
+    "respuesta": ""
+  },
+  {
+    "id": 62,
+    "pregunta": "Â¿En quÃ© fecha se celebra el dÃ­a de La Bandera Nacional? R= Se celebra el 1 de Septiembre de cada a;o establecido por Decreto Legislativo No. 84-91 del 9 de mayo de 1995 y publicado en la Gaceta No. 27,670. (Este Decreto deroga al No. 5 que establecÃ­a como dÃ­a de la Bandera Nacional el 14 de Junio).",
+    "respuesta": ""
+  },
+  {
+    "id": 63,
+    "pregunta": "Â¿Con quÃ© Decreto el Congreso Nacional aprobÃ³ a la Bandera como sÃ­mbolo Nacional? R= Con el Decreto No. 7 del 16 de febrero de 1866.",
+    "respuesta": ""
+  },
+  {
+    "id": 64,
+    "pregunta": "Â¿QuÃ© reformas estableciÃ³ el Congreso Nacional mediante el Decreto No. 29 del 18 de enero de 1949? R= EstableciÃ³ que nuestra bandera constarÃ¡ de dos franjas color azul turquesa y una blanca al centro la que llevarÃ¡ cinco estrellas. El ancho de las tres franjas deberÃ¡ estar contenido dos veces en la longitud formando un rectÃ¡ngulo.",
+    "respuesta": ""
+  },
+  {
+    "id": 65,
+    "pregunta": "Â¿QuÃ© simbolizan y quÃ© representan las franjas azules de nuestra Bandera Nacional? R= Simbolizan el hermoso cielo que nos cubre Â«como una bendiciÃ³n de DiosÂ» los sublimes ideales, los mÃ¡s altos sentimientos de nuestro amor fraternal y tambiÃ©n representan los dos mares que baÃ±an las costas del territorio nacional.",
+    "respuesta": ""
+  },
+  {
+    "id": 66,
+    "pregunta": "Â¿QuÃ© significa la franja blanca? R= Significa el constante anhelo de paz de los hondureÃ±o y la pureza que debe reinar en sus espÃ­ritus.",
+    "respuesta": ""
+  },
+  {
+    "id": 67,
+    "pregunta": "Â¿QuÃ© simbolizan las cinco estrellas azules? R= Simbolizan el reclamo constante de nuestro hÃ©roe General Francisco MorazÃ¡n para que los pueblos Centroamericanos vuelvan a formar una sola unidad granÃ­tica, imperioso legado que dejÃ³ a la juventud centroamericana.",
+    "respuesta": ""
+  },
+  {
+    "id": 68,
+    "pregunta": "Â¿CÃ³mo debe interpretarse la situaciÃ³n de las cinco estrellas dentro del cuadrilongo de la Bandera Nacional? R= DeberÃ¡ interpretarse asÃ­: La estrella del centro representa a la RepÃºblica de Honduras, la del Noroeste a Guatemala, la del Nordeste a Nicaragua, la del Sureste a El Salvador y la del Sureste a Costa Rica.",
+    "respuesta": ""
+  },
+  {
+    "id": 69,
+    "pregunta": "Â¿QuÃ© protecciÃ³n debemos dar a nuestra Bandera? R= Debemos conservarla siempre inmaculada, porque es el manto, el vestido sagrado de la Patria. Por eso el artÃ­culo 30 del Decreto que la instituye prohÃ­be usar en ella Â«inscripciones de ninguna claseÂ».",
+    "respuesta": ""
+  },
+  {
+    "id": 70,
+    "pregunta": "Â¿CuÃ¡l es la declaratoria que en base a la ley hace un director a un estudiante en el momento de conferirle un tÃ­tulo, grado u otra investidura de profesional?",
+    "respuesta": ""
+  },
+  {
+    "id": 71,
+    "pregunta": "Â¿QuÃ© Bandera existieron durante el perÃ­odo colonial en Honduras? R= Existieron las siguientes banderas:",
+    "respuesta": ""
+  },
+  {
+    "id": 72,
+    "pregunta": "Â¿QuÃ© es indispensable para coincidir con una perfecta uniformidad del color azul de nuestra Bandera? R= Es indispensable que el Estado pida la tela en cantidad suficiente para la confecciÃ³n de las Banderas de toda la RepÃºblica, debiendo hacer lo mismo con la tela para la franja blanca, porque a veces no es posible encontrarla en el comercio en las condiciones requeridas.",
+    "respuesta": ""
+  },
+  {
+    "id": 73,
+    "pregunta": "Â¿QuÃ© es recomendable para la confecciÃ³n de nuestra Bandera? R= Un asunto importante es el de escoger con acierto la tela de las franjas superior e inferior, que debe ser de color azul oscuro o turquÃ­, de tafetÃ¡n, seda o de cualquier otra clase de tela fina, debiendo ser de la misma calidad la tela para la franja blanca que va en el centro.",
+    "respuesta": ""
+  },
+  {
+    "id": 74,
+    "pregunta": "Â¿QuÃ© recomendaciones debemos tomar en cuenta para un correcto uso y conservaciÃ³n de la Bandera? R= Se deben tomar en cuenta las siguientes recomendaciones:",
+    "respuesta": ""
+  },
+  {
+    "id": 75,
+    "pregunta": "Â¿CÃ³mo debe doblarse la Bandera despuÃ©s de haber concluido los actos oficiales? R= Debe doblarse asÃ­: La franja superior se plegarÃ¡ longitudinalmente, por el reverso, la franja blanca, tal como lo indica la grÃ¡fica en su Â«primera faseÂ», a continuaciÃ³n se plega la franja inferior a la blanca por el anverso, Â«fase segundaÂ» de la grÃ¡fica; seguidamente se dobla en forma transversal por la mitad, llevando de la misma manera la extensiÃ³n del cuadro que figura en la parte final de la Â«tercera faseÂ», una vez a la derecha y otra a la izquierda y por Ãºltimo se dobla diagonalmente para llegar a la Â«forma finalÂ» que indica la grÃ¡fica. Esta operaciÃ³n se ejecutarÃ¡ mejor entre dos personas.",
+    "respuesta": ""
+  },
+  {
+    "id": 76,
+    "pregunta": "Â¿CÃ³mo se debe confeccionar nuestra Bandera Nacional? R= Primero debemos seleccionar con certeza la tela de las franjas superior e inferior que deben ser de color azul oscuro o turquÃ­, de tafetÃ¡n, seda o cualquier otra clase de tela fina, debiendo ser de la misma calidad para la franja blanca que va en el centro. Unidas las franjas horizontalmente se tiene el cuidado de llevar con exactitud sobre el largo dos veces la medida del ancho total de las franjas. Terminada esta operaciÃ³n se procede a colocar las cinco estrellas en el centro de la franja blanca.",
+    "respuesta": ""
+  },
+  {
+    "id": 77,
+    "pregunta": "Â¿Para contribuir a cultivar y fomentar el amor a la Patria, quÃ© se recomienda a los directores de todos los centros educativos del paÃ­s?",
+    "respuesta": ""
+  },
+  {
+    "id": 78,
+    "pregunta": "Â¿En tÃ©rminos generales cÃ³mo se define el Escudo? R= Se define como Â«el campo, superficie o espacio en que se portan los blasones de reinos, repÃºblicas o familiasÂ» con motivos o figuras que prÃ³digamente ofrece la naturaleza.",
+    "respuesta": ""
+  },
+  {
+    "id": 79,
+    "pregunta": "Â¿QuÃ© simboliza el Escudo? R= Simboliza la materia, el cuerpo divino de la Patria",
+    "respuesta": ""
+  },
+  {
+    "id": 80,
+    "pregunta": "Â¿Mediante quÃ© Decreto fue establecido nuestro Escudo Nacional? R= Fue establecido mediante decreto No. 16 del 10 de Enero de 1935, a travÃ©s del Congreso Nacional.",
+    "respuesta": ""
+  },
+  {
+    "id": 81,
+    "pregunta": "Â¿CÃ³mo esta estructurado el Escudo Nacional? R= El Escudo Nacional se compone de un triÃ¡ngulo equilÃ¡tero, en su base un volcÃ¡n entre dos castillos, sobre ellos estÃ¡ un arcoÃ­ris y debajo de Ã©ste, tras el volcÃ¡n se levanta un Sol esparciendo luz.",
+    "respuesta": ""
+  },
+  {
+    "id": 82,
+    "pregunta": "Â¿QuÃ© posiciÃ³n ocupa el Triangulo? R= El triangulo se encuentra colocado sobre un terreno que figura baÃ±ado por dos mares. En torno a Ã©l un Ã³valo que contiene en letras de oro: Â«RepÃºblica de Honduras, Libre, Soberana e Independiente, 15 de Septiembre de 1821Â».",
+    "respuesta": ""
+  },
+  {
+    "id": 83,
+    "pregunta": "Â¿QuÃ© aparece en la parte superior del Ã³valo? R= Aparece una aljaba de flechas, de la que cuelgan cuernos de la abundancia, sobresaliendo todo a travÃ©s de una cordillera de montaÃ±as de donde despuntan tres arboles de roble a la derecha, tres pinos a la izquierda y en distribuciÃ³n conveniente, unas minas, una barra, un barreno, una cu;a, una almÃ¡dena y un martillo.",
+    "respuesta": ""
+  },
+  {
+    "id": 84,
+    "pregunta": "Â¿QuÃ© significa el triÃ¡ngulo equilÃ¡tero? R= Significa la perfecta igualdad de todos los hondureÃ±os ante la ley, y que en aras de una verdadera democracia todos debemos gozar de los mismos derechos y obligaciones sin distinciÃ³n de fueros ni privilegios para nadie.",
+    "respuesta": ""
+  },
+  {
+    "id": 85,
+    "pregunta": "Â¿QuÃ© representa y que simboliza el volcÃ¡n? R= El volcÃ¡n representa el aspecto fÃ­sico del territorio nacional y simboliza el ardor, la valentÃ­a y el coraje con que los hijos de Honduras debemos defender su integridad.",
+    "respuesta": ""
+  },
+  {
+    "id": 86,
+    "pregunta": "Â¿DÃ³nde se sitÃºan los dos castillo y que significan? R= Uno se sitÃºa en Omoa departamento de CortÃ©s, protegiendo las costas del Mar Caribe y el otro situado en el Golfo de Fonseca, regiÃ³n del PacÃ­fico. Simbolizan las fortalezas en que se puso a prueba el valor y coraje de la raza aborigen, ante cuyos muros se estrellÃ³ muchas veces la furia del conquistador.",
+    "respuesta": ""
+  },
+  {
+    "id": 87,
+    "pregunta": "Â¿QuÃ© simboliza el Sol naciente? R= Simboliza la libertad y el amor a la patria, virtudes por las que muriÃ³ Lempira primer defensor de nuestra integridad nacional.",
+    "respuesta": ""
+  },
+  {
+    "id": 88,
+    "pregunta": "Â¿QuÃ© simbolizan los dos mares? R= Los dos mares uno en el Caribe o de las Antillas y el otro mar PacÃ­fico, simbolizan las rutas que siguiÃ³ ColÃ³n para llegar a estas tierras y por medio de ellos nos comunicamos con otros continentes.",
+    "respuesta": ""
+  },
+  {
+    "id": 89,
+    "pregunta": "Â¿QuÃ© simboliza el Ã³valo y quÃ© contiene en su interior? R= Simboliza el rectÃ¡ngulo donde se guarda la gloriosa fecha de nuestra independencia de EspaÃ±a, conteniendo en su interior la leyenda que dice:",
+    "respuesta": ""
+  },
+  {
+    "id": 90,
+    "pregunta": "Â¿QuÃ© aparece en la parte superior e inferior del Ã³valo? R= En la parte superior aparece una aljaba de flechas, de la que cuelgan los cuernos de la abundancia.",
+    "respuesta": ""
+  },
+  {
+    "id": 91,
+    "pregunta": "Â¿QuÃ© simboliza la aljaba llena de flechas? R= Simboliza las armas que usaron nuestros antepasados en defensa de la soberanÃ­a nacional.",
+    "respuesta": ""
+  },
+  {
+    "id": 92,
+    "pregunta": "Â¿QuÃ© simbolizan los cuernos de la abundancia? R= Simbolizan la riqueza vegetal de Honduras que nos invita a explotarla mediante el trabajo digno y enaltecedor.",
+    "respuesta": ""
+  },
+  {
+    "id": 93,
+    "pregunta": "Â¿QuÃ© significa la cordillera de montaÃ±as? R= Significa que nuestro territorio por su situaciÃ³n geogrÃ¡fica es accidentado y sumamente montaÃ±oso, con variedad de clima.",
+    "respuesta": ""
+  },
+  {
+    "id": 94,
+    "pregunta": "Â¿QuÃ© significan los robles? R= Significan el vigor, el arrojo y la fortaleza del hondureÃ±o dedicado al trabajo.",
+    "respuesta": ""
+  },
+  {
+    "id": 95,
+    "pregunta": "Â¿QuÃ© significan los pinos? R= El Pino es nuestro Ã¡rbol nacional por su abundancia y utilidad, y simbolizan la perfecta verticalidad o sea que nosotros los hondureÃ±os debemos ser tan verticales como nuestros pinos.",
+    "respuesta": ""
+  },
+  {
+    "id": 96,
+    "pregunta": "Â¿QuÃ© significan las minas? R= Significan las riquezas minerales aÃºn no explotadas por los hondureÃ±os.",
+    "respuesta": ""
+  },
+  {
+    "id": 97,
+    "pregunta": "Â¿QuÃ© simbolizan las herramientas? R= Las herramientas simbolizan el reclamo constante que la patria hace a sus hijos invitÃ¡ndonos a todos al trabajo y son cinco: la barra, el barreno, la cuÃ±a, la almÃ¡dena y el martillo.",
+    "respuesta": ""
+  },
+  {
+    "id": 98,
+    "pregunta": "Â¿QuÃ© simboliza el arco iris? R= Simboliza la paz, la uniÃ³n y la armonÃ­a que debe reinar en toda la familia hondureÃ±a.",
+    "respuesta": ""
+  },
+  {
+    "id": 99,
+    "pregunta": "Â¿QuÃ© simboliza el cielo azul de nuestro Escudo Nacional?",
+    "respuesta": ""
+  },
+  {
+    "id": 100,
+    "pregunta": "¿Qué simboliza el cielo azul de nuestro Escudo Nacional?",
+    "respuesta": "Simboliza justicia, verdad, lealtad, caridad y hermosura, virtudes supremas que todos los hondureños debemos mantener incólumes; ese cielo azul que todos los días vemos nos recuerda la grandeza de Dios, autor y creador de todo cuanto existe."
+  }
+]
