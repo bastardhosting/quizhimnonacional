@@ -1,0 +1,779 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+    min-height: 100vh;
+    padding: 15px;
+    color: #e2e8f0;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #f1f5f9;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #94a3b8;
+}
+
+.card {
+    background: rgba(30, 41, 59, 0.7);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+    backdrop-filter: blur(10px);
+}
+
+.card h2 {
+    margin-bottom: 15px;
+    color: #93c5fd;
+}
+
+.card h3 {
+    margin-bottom: 12px;
+    color: #93c5fd;
+    font-size: 1.2rem;
+}
+
+.option-label {
+    display: block;
+    margin-bottom: 10px;
+    cursor: pointer;
+    padding: 10px 14px;
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.option-label:hover {
+    background: rgba(96, 165, 250, 0.15);
+    border-color: rgba(96, 165, 250, 0.4);
+}
+
+.option-label input {
+    margin-right: 10px;
+}
+
+.question-block {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.question-block:last-child {
+    border-bottom: none;
+    margin-bottom: 15px;
+}
+
+.question-number {
+    font-weight: bold;
+    color: #60a5fa;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    display: block;
+}
+
+.question-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 18px;
+    line-height: 1.5;
+    color: #f8fafc;
+}
+
+.answer-input {
+    margin-bottom: 10px;
+}
+
+.answer-input label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #93c5fd;
+}
+
+.answer-input input[type="text"] {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 1rem;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.2s;
+    color: #f8fafc;
+    font-family: inherit;
+}
+
+.answer-input input[type="text"]:focus {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
+}
+
+.answer-input input[type="text"]::placeholder {
+    color: #64748b;
+}
+
+.progress {
+    background: rgba(255,255,255,0.08);
+    border-radius: 8px;
+    height: 10px;
+    margin: 15px 0;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+    height: 100%;
+    width: 0%;
+    transition: width 0.4s ease;
+}
+
+.progress-text {
+    font-size: 0.95rem;
+    color: #94a3b8;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+    width: 100%;
+    text-align: center;
+    background: #3b82f6;
+    color: white;
+}
+
+.btn:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: #475569;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #334155;
+}
+
+.btn-lg {
+    padding: 16px 24px;
+    font-size: 1.1rem;
+}
+
+.form-actions {
+    text-align: center;
+    margin-top: 25px;
+}
+
+/* Reproductor de musica */
+.spotify-card {
+    background: #000;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    color: #fff;
+    padding: 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+}
+
+.spotify-card h3 {
+    color: #1ed760;
+    font-size: 1.1rem;
+    margin: 0 0 12px 0;
+}
+
+.musica-player {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #121212;
+    border-radius: 8px;
+    padding: 12px;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.musica-portada {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #1ed760, #1db954);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.musica-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.musica-titulo {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 2px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.musica-artista {
+    font-size: 0.8rem;
+    color: #b3b3b3;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.musica-controles {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.musica-btn {
+    background: #333;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+    cursor: pointer;
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.musica-btn:hover {
+    background: #444;
+    border-color: rgba(255,255,255,0.4);
+}
+
+.musica-btn-shuffle {
+    background: #333;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #b3b3b3;
+    cursor: pointer;
+    padding: 6px 10px;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.musica-btn-shuffle:hover {
+    background: #444;
+    color: #fff;
+}
+
+.musica-btn-shuffle.activo {
+    background: #1ed760;
+    border-color: #1ed760;
+    color: #000;
+}
+
+.musica-progreso-container {
+    width: 100%;
+    margin-top: 8px;
+}
+
+.musica-progreso {
+    width: 100%;
+    height: 4px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 2px;
+    margin: 4px 0;
+    cursor: pointer;
+    position: relative;
+}
+
+.musica-progreso-fill {
+    height: 100%;
+    background: #1ed760;
+    border-radius: 2px;
+    width: 0%;
+}
+
+.musica-tiempo {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: #b3b3b3;
+    margin-top: 2px;
+}
+
+.musica-volumen {
+    width: 100%;
+}
+
+.musica-volumen input {
+    width: 100%;
+    accent-color: #1ed760;
+}
+
+.score-display {
+    text-align: center;
+    margin: 25px 0;
+}
+
+.score-number {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #60a5fa;
+    display: block;
+}
+
+.score-text {
+    font-size: 1.5rem;
+    color: #666;
+}
+
+.score-percentage {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #60a5fa;
+    margin: 15px 0;
+}
+
+.score-message {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.message-excellent { color: #34d399; }
+.message-good { color: #fbbf24; }
+.message-needs-work { color: #fb7185; }
+
+.feedback-card {
+    text-align: center;
+}
+
+.feedback-card .badge {
+    font-size: 1.5rem;
+    padding: 12px 24px;
+    margin-bottom: 20px;
+    display: inline-block;
+    border-radius: 20px;
+    font-weight: 700;
+}
+
+.correct-badge {
+    background: #10b981;
+    color: white;
+}
+
+.incorrect-badge {
+    background: #ef4444;
+    color: white;
+}
+
+.feedback-card .question-text {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+.result-item {
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    animation: slideIn 0.3s ease;
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.result-item.correct {
+    background: rgba(16, 185, 129, 0.08);
+    border-left: 4px solid #10b981;
+}
+
+.result-item.incorrect {
+    background: rgba(239, 68, 68, 0.08);
+    border-left: 4px solid #ef4444;
+}
+
+.result-question {
+    margin-bottom: 12px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: #f8fafc;
+}
+
+.q-number {
+    color: #60a5fa;
+    margin-right: 8px;
+}
+
+.result-answer {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+.badge {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    display: inline-block;
+}
+
+.tu-respuesta {
+    color: #94a3b8;
+    font-size: 0.95rem;
+}
+
+.respuesta-correcta {
+    color: #34d399;
+    font-weight: 600;
+}
+
+.correct-answer {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+@media (max-width: 600px) {
+    body { padding: 8px; }
+    .container { max-width: 100%; }
+    .card { padding: 16px; margin-bottom: 15px; }
+    .score-number { font-size: 2.5rem; }
+    header h1 { font-size: 1.6rem; }
+    header { margin-bottom: 20px; }
+    .question-text { font-size: 1.1rem; }
+    .btn { width: 100%; font-size: 1rem; padding: 12px 16px; }
+    .btn-lg { padding: 14px 20px; font-size: 1rem; }
+    .musica-controles { gap: 5px; flex-wrap: wrap; justify-content: center; }
+    .musica-btn { padding: 5px 10px; font-size: 0.85rem; }
+    .musica-btn-shuffle { padding: 5px 10px; font-size: 0.85rem; }
+    .musica-progreso-container { margin-top: 6px; }
+    .musica-titulo { font-size: 0.85rem; }
+    .musica-artista { font-size: 0.75rem; }
+    .musica-portada { width: 34px; height: 34px; font-size: 1rem; }
+    .spotify-card { position: static !important; padding: 12px; margin-bottom: 15px; }
+    .spotify-card h3 { font-size: 1rem; margin-bottom: 8px; }
+    .progress { height: 8px; margin: 10px 0; }
+    .progress-text { font-size: 0.85rem; margin-bottom: 15px; }
+    .option-label { padding: 10px 12px; font-size: 0.95rem; }
+    .option-label span { font-size: 0.95rem; }
+    .feedback-card .question-text { font-size: 1.1rem; }
+    .badge { font-size: 1.2rem; padding: 10px 18px; }
+    .result-item { padding: 14px; margin-bottom: 12px; font-size: 0.95rem; }
+    .result-question { font-size: 1rem; margin-bottom: 10px; }
+}
+
+@media (max-width: 480px) {
+    body { padding: 6px; }
+    .card { padding: 14px; }
+    header h1 { font-size: 1.4rem; }
+    .question-text { font-size: 1rem; line-height: 1.4; }
+    .btn { font-size: 0.95rem; padding: 11px 14px; }
+    .btn-lg { padding: 13px 18px; font-size: 0.95rem; }
+    .spotify-card { padding: 10px; }
+    .musica-controles { gap: 4px; }
+    .musica-btn { padding: 4px 8px; font-size: 0.8rem; }
+    .musica-btn-shuffle { padding: 4px 8px; font-size: 0.8rem; }
+    .musica-titulo { font-size: 0.8rem; }
+    .musica-artista { font-size: 0.7rem; }
+    .musica-portada { width: 30px; height: 30px; font-size: 0.9rem; }
+    .musica-volumen input { height: 6px; }
+    .score-number { font-size: 2rem; }
+    .score-percentage { font-size: 1.5rem; }
+    .option-label { padding: 9px 10px; font-size: 0.9rem; }
+    .option-label span { font-size: 0.9rem; }
+    .badge { font-size: 1.1rem; padding: 9px 16px; }
+    .result-item { padding: 12px; font-size: 0.9rem; }
+    .result-question { font-size: 0.95rem; margin-bottom: 8px; }
+    .progress-text { font-size: 0.8rem; }
+}
+
+/* Buscador de musica */
+.musica-buscar {
+    margin-bottom: 10px;
+}
+
+.musica-buscar input {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    background: #000;
+    border: 1px solid #333;
+    border-radius: 8px;
+    outline: none;
+    color: #fff;
+}
+
+.musica-buscar input:focus {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
+}
+
+.musica-buscar input::placeholder {
+    color: #666;
+}
+
+.musica-lista {
+    max-height: 150px;
+    overflow-y: auto;
+    margin-bottom: 12px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    background: rgba(15, 23, 42, 0.4);
+}
+
+.musica-item {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    color: #e2e8f0;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    transition: background 0.2s;
+}
+
+.musica-item:last-child {
+    border-bottom: none;
+}
+
+.musica-item:hover {
+    background: rgba(96, 165, 250, 0.15);
+}
+
+.falladas {
+    color: #fb7185;
+    margin-left: 8px;
+}
+
+/* Resumen de estadísticas finales */
+.stats-summary {
+    display: flex;
+    justify-content: space-around;
+    background: rgba(15, 23, 42, 0.4);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #60a5fa;
+    display: block;
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: #94a3b8;
+    display: block;
+    margin-top: 4px;
+}
+
+/* Modal de resultados finales */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: 15px;
+    backdrop-filter: blur(4px);
+}
+
+.modal-overlay.activo {
+    display: flex;
+}
+
+.modal-container {
+    background: #1e293b;
+    border: 2px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+    width: 100%;
+    max-width: 750px;
+    max-height: 95vh;
+    overflow-y: auto;
+    box-shadow: 0 25px 80px rgba(0,0,0,0.7);
+    animation: modalEntrada 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes modalEntrada {
+    from { opacity: 0; transform: scale(0.9) translateY(-15px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.modal-cerrar {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    width: 44px;
+    height: 44px;
+    background: #ef4444;
+    border: 3px solid #1e293b;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    z-index: 10;
+}
+
+.modal-cerrar:hover {
+    background: #dc2626;
+    transform: rotate(90deg);
+    transition: transform 0.2s, background 0.2s;
+}
+
+.modal-cerrar:active {
+    transform: rotate(90deg) scale(0.95);
+}
+
+.modal-container .score-card {
+    margin: 0 24px 20px 24px;
+}
+
+.modal-container .results-card {
+    margin: 0 24px 24px 24px;
+}
+
+.modal-container .form-actions {
+    margin-bottom: 24px;
+}
+
+/* Responsive para móvil - Modal */
+@media (max-width: 600px) {
+    .modal-overlay {
+        padding: 8px;
+    }
+    .modal-container {
+        max-height: 96vh;
+        border-radius: 16px;
+        border-width: 1px;
+    }
+    .modal-cerrar {
+        top: -10px;
+        right: -10px;
+        width: 48px;
+        height: 48px;
+        font-size: 1.8rem;
+        border-width: 3px;
+    }
+    .modal-container .score-card {
+        margin: 0 14px 14px 14px;
+    }
+    .modal-container .results-card {
+        margin: 0 14px 14px 14px;
+    }
+    .modal-container .form-actions {
+        margin-bottom: 14px;
+    }
+    .stats-summary {
+        flex-direction: column;
+        gap: 10px;
+        padding: 14px;
+        margin: 14px 0;
+    }
+    .stat-item {
+        text-align: center;
+    }
+    .stat-number {
+        font-size: 1.75rem;
+    }
+    .stat-label {
+        font-size: 0.8rem;
+    }
+    .score-card .score-number {
+        font-size: 2rem;
+    }
+    .score-card .score-percentage {
+        font-size: 1.5rem;
+    }
+    .result-item {
+        padding: 12px;
+    }
+    .result-question {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-overlay {
+        padding: 6px;
+    }
+    .modal-cerrar {
+        top: -8px;
+        right: -8px;
+        width: 44px;
+        height: 44px;
+        font-size: 1.6rem;
+    }
+    .stats-summary {
+        padding: 12px;
+    }
+    .stat-number {
+        font-size: 1.5rem;
+    }
+    .modal-container .results-card h2 {
+        font-size: 1.2rem;
+    }
+    .score-card .score-number {
+        font-size: 1.75rem;
+    }
+    .score-card .score-percentage {
+        font-size: 1.3rem;
+    }
+}
